@@ -25,7 +25,7 @@ pipeline:
       aws sts get-caller-identity
       composer install --no-interaction --prefer-dist --optimize-autoloader
       aws s3 ls
-      aws s3 cp . s3://chipperci/  --recursive
+      aws s3 cp /vendor s3://chipperci/
       
   - name: Check files
     cmd: ls -la
