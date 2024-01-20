@@ -13,6 +13,7 @@ pipeline:
   - name: Init
     cmd: |
       echo ${CI_COMMIT_SHA}
+      echo ${CI_COMMIT_SHA_SHORT}
       echo "testing"
   - name: Install Aws
     cmd: |
