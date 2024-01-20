@@ -14,7 +14,6 @@ pipeline:
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip awscliv2.zip
       sudo ./aws/install
-      apt-get install less
 
   - name: Setup
     cmd: |
@@ -24,6 +23,7 @@ pipeline:
       aws configure set aws_secret_access_key $AWS_SECRET_ID_NEW
       aws sts get-caller-identity
       composer install --no-interaction --prefer-dist --optimize-autoloader
+      aws s3 cp . s3://chipperci
       
   - name: Check files
     cmd: ls -la
