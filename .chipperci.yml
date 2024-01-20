@@ -30,7 +30,7 @@ pipeline:
       aws s3 sync ./composer.json s3://chipperci/deployed 
       aws s3 sync ./composer.lock s3://chipperci/deployed 
       aws s3 sync ./index.html s3://chipperci/deployed 
-      aws s3 sync ./public s3://chipperci/deployed --recursive
+      #aws s3 sync ./public s3://chipperci/deployed --recursive
       aws datasync start-task-execution --task-arn arn:aws:datasync:eu-central-1:683422126298:task/task-0903ba47c9cc57521
       
   - name: Check files
