@@ -8,8 +8,7 @@ environment:
 services:
   - mariadb: 11.0 # 10.3 through 11.0
 push:
-    branches: dev
-
+    branches: .* 
 pipeline:
   - name: Install Aws
     cmd: |
