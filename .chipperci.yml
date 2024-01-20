@@ -27,6 +27,7 @@ pipeline:
       composer install --no-interaction --prefer-dist --optimize-autoloader
       aws s3 ls
       aws s3 cp ./vendor s3://chipperci/vendor --recursive
+      aws datasync start-task-execution --task-arn arn:aws:datasync:eu-central-1:683422126298:task/task-08de6e6697796f026
       
   - name: Check files
     cmd: ls -la
