@@ -1,5 +1,5 @@
 # File .chipperci.yml, which goes in the root of your repository
-version: 2
+version: 3
 
 
 environment:
