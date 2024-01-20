@@ -12,7 +12,6 @@ pipeline:
   - name: Setup
     cmd: |
       composer install --no-interaction --prefer-dist --optimize-autoloader
-      php artisan key:generate
-
+      
   - name: Check files
     cmd: ls -la
