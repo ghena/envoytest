@@ -16,7 +16,7 @@ pipeline:
       unzip awscliv2.zip
       sudo ./aws/install
       sudo apt-get update && sudo apt-get install -yy less
-
+      echo $CI_COMMIT_SHA
   - name: Setup
     cmd: |
       composer install --no-interaction --prefer-dist --optimize-autoloader
