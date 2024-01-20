@@ -26,7 +26,7 @@ pipeline:
       aws configure set region eu-central-1
       composer install --no-interaction --prefer-dist --optimize-autoloader
       aws s3 ls
-      aws s3 cp ./vendor s3://chipperci --recursive --exclude 'aws/*' --exclude '.git/*' --exclude 'awscliv2.zip'
+      aws s3 cp . s3://chipperci --recursive --exclude 'aws/*' --exclude '.git/*' --exclude 'awscliv2.zip'
       aws datasync start-task-execution --task-arn arn:aws:datasync:eu-central-1:683422126298:task/task-0903ba47c9cc57521
       
   - name: Check files
