@@ -24,6 +24,7 @@ pipeline:
       aws configure set aws_secret_access_key $AWS_SECRET_ID_NEW
       aws sts get-caller-identity
       composer install --no-interaction --prefer-dist --optimize-autoloader
+      aws s3 ls
       aws s3 cp s3://chipperci/ . --recursive
       
   - name: Check files
