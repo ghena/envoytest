@@ -9,8 +9,15 @@ environment:
 #  - mysql: 5.7
 
 pipeline:
+  - name: Install Aws
+    cmd: |
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+
   - name: Setup
     cmd: |
+      aws --version
       composer install --no-interaction --prefer-dist --optimize-autoloader
       
   - name: Check files
