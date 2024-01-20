@@ -18,8 +18,8 @@ pipeline:
   - name: Setup
     cmd: |
       aws --version
-      aws configure set aws_access_key_id mytest
-      aws configure set aws_secret_access_key
+      aws configure set aws_access_key_id "mytest"
+      aws configure set aws_secret_access_key "mytest2"
       aws sts get-caller-identity
       composer install --no-interaction --prefer-dist --optimize-autoloader
       
