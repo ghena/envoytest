@@ -27,10 +27,10 @@ pipeline:
   - name: Move Files
     cmd: | 
       aws --version
-      aws configure set aws_access_key_id $AWS_CLIENT_ID_NEW
-      aws configure set aws_secret_access_key $AWS_SECRET_ID_NEW
-      aws configure set region eu-central-1
+      #aws configure set aws_access_key_id $AWS_CLIENT_ID_NEW
+      #aws configure set aws_secret_access_key $AWS_SECRET_ID_NEW
+      #aws configure set region eu-central-1
       aws s3 cp . s3://chipperci --recursive --exclude 'aws/*' --exclude '.git/*' --exclude 'awscliv2.zip'
-      aws datasync start-task-execution --task-arn arn:aws:datasync:eu-central-1:683422126298:task/task-0903ba47c9cc57521
+      #aws datasync start-task-execution --task-arn arn:aws:datasync:eu-central-1:683422126298:task/task-0903ba47c9cc57521
       #aws codebuild start-build  --project-name my-db-deploy --artifacts-override="{\"type\": \"S3\", \"location\": \"arn:aws:s3:::codepipeline-us-east-1-4444442770/my-db-dev-deploy/BuildArtif/ZepddNIiV\",\"encryptionDisabled\": false}" --environment-variables-override name='environment',value='prod'--environment-variables-override name='delete_on_termination_db_ebs_volume',value='true'
     
